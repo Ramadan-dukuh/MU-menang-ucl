@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,500;0,800;1,500&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+.bg{
+    z-index: -1;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    object-fit:contain;
+}
+.container {
+    /* background-image: url('img/image2.jpg'); */
+    background-size: cover;
+    background-color:rgba(44, 68, 70, 0.8);
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tips-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    /* background-color: rgba(255, 255, 255, 0.5); Optional: lapisan transparan */
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.tip {
+    margin-top: 50px;
+    height: 234px;
+    background-color: rgba(255, 255, 255, 0.3 /* 0.8 = 80% opacity */);
+    padding: 10px;
+    border-radius: 25px;
+    text-align: center;
+    width: calc(20% - 70px); /* Lebar 20% dikurangi jarak */
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0.25);
+    position: relative; /* Mengatur posisi relatif untuk elemen tip */
+    overflow: visible; /* Pastikan gambar yang keluar tidak terpotong */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip img {
+    width: 150px;
+    height: 100px;
+    position: absolute; /* Membuat gambar bisa keluar dari batas elemen */
+    top: -40px; /* Menggeser gambar ke atas agar keluar dari kotak */
+    left: 50%;
+    transform: translateX(-50%); /* Menempatkan gambar di tengah secara horizontal */
+    /* border-radius: 50%; Opsional: Memberikan efek lingkaran pada gambar */
+}
+
+.tip p {
+    font-size: 20px;
+    margin: 60px 0 0 0; /* Menambahkan jarak untuk menyesuaikan dengan gambar */
+    color: white;
+    font-weight: 400;
+}
+.tip:hover {
+    transform: translateY(-10px); /* Naikkan elemen sedikit ke atas */
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.6); /* Efek neon */
+}
